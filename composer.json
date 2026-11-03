@@ -19,7 +19,8 @@
 		"nette/security": "^3.2",
 		"nette/utils": "^4.0",
 		"latte/latte": "^3.1",
-		"tracy/tracy": "^2.10"
+		"tracy/tracy": "^2.10",
+		"rajtik76/nette-console": "@dev"
 	},
 	"require-dev": {
 		"nette/tester": "^2.5",
@@ -50,5 +51,11 @@
 		"allow-plugins": {
 			"phpstan/extension-installer": true
 		}
-	}
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../nette-console"
+		}
+	]
 }

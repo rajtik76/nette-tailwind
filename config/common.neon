@@ -29,6 +29,10 @@ assets:
 			type: vite
 
 
+console:
+	name: Nette
+
+
 di:
 	export:
 		parameters: no

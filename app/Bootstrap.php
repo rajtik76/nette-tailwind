@@ -4,6 +4,7 @@ namespace App;
 
 use Nette;
 use Nette\Bootstrap\Configurator;
+use Rajtik\Console\Discovery\PackageDiscovery;
 
 
 class Bootstrap
@@ -70,6 +71,8 @@ class Bootstrap
 
 	private function setupContainer(): void
 	{
+		PackageDiscovery::fromComposer()->attach($this->configurator);
+
 		$configDir = $this->rootDir . '/config';
 		$this->configurator->addConfig($configDir . '/common.neon');
 		$this->configurator->addConfig($configDir . '/services.neon');

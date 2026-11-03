@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+require __DIR__ . '/vendor/autoload.php';
+
+// debug mode recompiles the container on config changes; set NETTE_DEBUG=0 in production
+$container = (new App\Bootstrap)->bootConsoleApplication(debugMode: getenv('NETTE_DEBUG') !== '0');
+exit($container->getByType(Contributte\Console\Application::class)->run());

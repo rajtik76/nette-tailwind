@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "529b85783821244de9a5f2b34c73cf24",
+    "content-hash": "075913056bd2a04b307ab3f088c31ec6",
     "packages": [
         {
             "name": "contributte/console",
@@ -1533,11 +1533,17 @@
         },
         {
             "name": "rajtik76/nette-console",
-            "version": "dev-main",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rajtik76/nette-console.git",
+                "reference": "39fba98d974060065acdbcfc3ecb306c8a849ccb"
+            },
             "dist": {
-                "type": "path",
-                "url": "../nette-console",
-                "reference": "46b7f100a75de3a69f7510d7beed110c7a00c1ef"
+                "type": "zip",
+                "url": "https://api.github.com/repos/rajtik76/nette-console/zipball/39fba98d974060065acdbcfc3ecb306c8a849ccb",
+                "reference": "39fba98d974060065acdbcfc3ecb306c8a849ccb",
+                "shasum": ""
             },
             "require": {
                 "contributte/console": "^0.11",
@@ -1567,23 +1573,7 @@
                     "Rajtik\\Console\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Rajtik\\Console\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "type:check": [
-                    "phpstan analyse"
-                ],
-                "tester": [
-                    "tester tests -s -C"
-                ],
-                "ci:check": [
-                    "@type:check",
-                    "@tester"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1595,9 +1585,11 @@
                 "nette",
                 "symfony"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/rajtik76/nette-console/issues",
+                "source": "https://github.com/rajtik76/nette-console/tree/v0.1.0"
+            },
+            "time": "2026-11-03T13:48:10+00:00"
         },
         {
             "name": "symfony/console",
@@ -2705,9 +2697,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "rajtik76/nette-console": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

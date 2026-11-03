@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "075913056bd2a04b307ab3f088c31ec6",
+    "content-hash": "b911e4dee71ad3170d645e04972202fc",
     "packages": [
         {
             "name": "contributte/console",
@@ -1533,16 +1533,16 @@
         },
         {
             "name": "rajtik76/nette-console",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rajtik76/nette-console.git",
-                "reference": "39fba98d974060065acdbcfc3ecb306c8a849ccb"
+                "reference": "51bf7d44967f287f7eb6d35898634133bcf030cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rajtik76/nette-console/zipball/39fba98d974060065acdbcfc3ecb306c8a849ccb",
-                "reference": "39fba98d974060065acdbcfc3ecb306c8a849ccb",
+                "url": "https://api.github.com/repos/rajtik76/nette-console/zipball/51bf7d44967f287f7eb6d35898634133bcf030cd",
+                "reference": "51bf7d44967f287f7eb6d35898634133bcf030cd",
                 "shasum": ""
             },
             "require": {
@@ -1587,9 +1587,9 @@
             ],
             "support": {
                 "issues": "https://github.com/rajtik76/nette-console/issues",
-                "source": "https://github.com/rajtik76/nette-console/tree/v0.1.0"
+                "source": "https://github.com/rajtik76/nette-console/tree/v0.2.0"
             },
-            "time": "2026-11-03T13:48:10+00:00"
+            "time": "2026-11-03T14:24:52+00:00"
         },
         {
             "name": "symfony/console",

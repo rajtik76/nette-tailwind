@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Vite root is assets/, so Latte templates must be listed explicitly */
+@source "../app";

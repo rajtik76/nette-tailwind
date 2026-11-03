@@ -1,0 +1,6 @@
+/vendor/
+/node_modules/
+/www/assets/
+/config/local.neon
+/.idea/
+.DS_Store

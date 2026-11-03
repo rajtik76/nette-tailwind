@@ -52,6 +52,18 @@ Laravel Herd / Valet need a custom driver that serves `www/` as the document roo
 `index.php` through their own router script.
 
 
+Checks
+------
+
+	composer run lint:check    # Latte templates (own engine, warnings fail) + NEON config
+	composer run type:check    # PHPStan level 8
+	composer run tester        # Nette Tester smoke tests
+	composer run ci:check      # all of the above, same as GitHub CI
+
+Tests render the layout, so run `npm run build` first.
+CI runs on PHP 8.4 and 8.5, Node version comes from `.nvmrc`.
+
+
 How Tailwind is wired in
 ------------------------
 

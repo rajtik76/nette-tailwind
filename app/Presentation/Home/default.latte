@@ -2,6 +2,12 @@
 
 {import '../@cubes.latte'}
 
+{* web font only here, error pages must not depend on a CDN *}
+{block head}
+	<link rel="preconnect" href="https://fonts.bunny.net">
+	<link rel="stylesheet" href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700">
+{/block}
+
 {block content}
 <main class="blueprint flex min-h-dvh flex-col items-center justify-center px-4 py-16 text-center text-white">
 	<div class="w-40 sm:w-52">{include latticeComplete}</div>

@@ -1,0 +1,14 @@
+{* Shared frame of the 4xx pages: the red cube has dropped out of the lattice *}
+
+{layout '../../@layout.latte'}
+{import '../../@cubes.latte'}
+
+{block body}
+<main class="blueprint flex min-h-dvh flex-col items-center justify-center px-4 py-16 text-center text-white">
+	<div class="mb-12 w-48 sm:w-60">{include latticeMissing}</div>
+
+	<div class="error-message">
+		{include content}
+	</div>
+</main>
+{/block}

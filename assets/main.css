@@ -2,3 +2,108 @@
 
 /* Vite root is assets/, so Latte templates must be listed explicitly */
 @source "../app";
+
+@theme {
+	--font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+	--color-navy: #0a2848;
+	--color-navy-line: #5fa8ee;
+	--color-mist: #cfe4f8;
+	--color-haze: #9fc0df;
+	--color-brand: #ff2d20;
+	--color-brand-light: #ff7a6e;
+	--color-brand-dark: #a8150c;
+}
+
+@layer base {
+	:focus-visible {
+		outline: 2px solid var(--color-brand-light);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+}
+
+@layer components {
+	/* navy ground with a faint drafting grid */
+	.blueprint {
+		background-color: var(--color-navy);
+		background-image:
+			radial-gradient(80% 55% at 50% 30%, rgb(60 142 215 / .35), transparent 70%),
+			linear-gradient(rgb(156 203 243 / .07) 1px, transparent 1px),
+			linear-gradient(90deg, rgb(156 203 243 / .07) 1px, transparent 1px);
+		background-size: auto, 32px 32px, 32px 32px;
+		background-position: center;
+	}
+
+	.blueprint-link {
+		@apply font-medium whitespace-nowrap text-white underline decoration-navy-line/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-light hover:decoration-brand-light;
+	}
+
+	/* exclamation mark whose dot is the red cube */
+	.bang {
+		position: relative;
+		display: inline-block;
+		width: .22em;
+		height: .71em;
+		margin-left: .11em;
+	}
+
+	.bang::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: .135em;
+		height: .43em;
+		translate: -50% 0;
+		background: currentColor;
+		clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+	}
+
+	.bang svg {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	.lattice {
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
+
+	.lattice .drop {
+		animation: lattice-drop 900ms cubic-bezier(.2, .9, .25, 1.15) 300ms both;
+	}
+
+	.lattice .hover {
+		animation: lattice-hover 3s ease-in-out infinite alternate;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.lattice .drop, .lattice .hover {
+			animation: none;
+		}
+	}
+
+	/* typography for the plain markup of Error4xx templates */
+	.error-message {
+		& h1 { @apply text-[clamp(2.4rem,9vw,4rem)] leading-none font-bold tracking-[-0.045em]; }
+		& p { @apply mx-auto mt-6 max-w-xl text-lg leading-relaxed text-balance text-haze; }
+		& p:last-child { @apply mt-12 border-t border-white/10 pt-6; }
+		& small { @apply text-3xl font-semibold tracking-[-0.02em] text-navy-line sm:text-4xl; }
+	}
+}
+
+@keyframes lattice-drop {
+	from { transform: translateY(-120px); opacity: 0; }
+	40% { opacity: 1; }
+	to { transform: none; }
+}
+
+@keyframes lattice-hover {
+	from { transform: translateY(-6px); }
+	to { transform: translateY(6px); }
+}

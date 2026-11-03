@@ -20,6 +20,6 @@ test('Home:default renders the welcome page', function () use ($container) {
 	Assert::type(TextResponse::class, $response);
 	$html = (string) $response->getSource();
 	Assert::match('~<title>\s*Congratulations!\s*\| Nette Web</title>~', $html);
-	Assert::contains('<h1>Congratulations!</h1>', $html);
+	Assert::match('~<h1[^>]*>Congratulations<span class="bang"~', $html);
 	Assert::contains('You have successfully created your', $html);
 });

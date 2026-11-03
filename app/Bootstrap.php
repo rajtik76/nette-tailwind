@@ -30,6 +30,18 @@ class Bootstrap
 	}
 
 
+	public function bootConsoleApplication(?bool $debugMode = null): Nette\DI\Container
+	{
+		if ($debugMode !== null) {
+			$this->configurator->setDebugMode($debugMode);
+		}
+
+		$this->initializeEnvironment();
+		$this->setupContainer();
+		return $this->configurator->createContainer();
+	}
+
+
 	public function bootTestContainer(): Nette\DI\Container
 	{
 		// separate cache keeps tests from clashing with the dev server; no Tracy, Tester owns error handling

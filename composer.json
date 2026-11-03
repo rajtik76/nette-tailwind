@@ -34,6 +34,10 @@
 	},
 	"scripts": {
 		"phpstan": "phpstan analyse",
+		"lint:check": [
+			"php latte-lint",
+			"neon-lint config"
+		],
 		"tester": "tester tests -s"
 	},
 	"minimum-stability": "stable",

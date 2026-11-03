@@ -71,6 +71,7 @@ config/
 tests/                         # Nette Tester smoke tests (.phpt)
 www/index.php                  # HTTP entry point
 latte-lint                     # Latte linter using the app's own Latte engine
+nette                          # console entry point (php nette list), see rajtik76/nette-console
 ```
 
 ## Essential commands
@@ -78,6 +79,10 @@ latte-lint                     # Latte linter using the app's own Latte engine
 ```bash
 # Run the app (built-in server)
 php -S localhost:8000 -t www
+
+# Console (Symfony Console, commands from installed packages are discovered automatically)
+php nette list
+php nette make:command SendReport
 
 # Tests (render the layout, so run `npm run build` first)
 composer run tester

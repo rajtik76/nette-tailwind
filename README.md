@@ -54,6 +54,25 @@ Laravel Herd / Valet need a custom driver that serves `www/` as the document roo
 `index.php` through their own router script.
 
 
+Console
+-------
+
+`php nette` is the Nette counterpart of `php artisan`, provided by
+[rajtik76/nette-console](https://github.com/rajtik76/nette-console):
+
+	php nette list                       # all commands
+	php nette make:command SendReport    # app/Console/SendReportCommand.php, runs as app:send-report
+	php nette cache:clear                # delete temp/cache
+	php nette package:discover           # extensions registered by installed packages
+
+Packages declare their DI extensions in `composer.json` (`extra.nette.extensions`) and
+`Bootstrap` registers them automatically, so their commands work right after `composer require`.
+Classes ending with `Command` in `app/` are registered by `search` in `services.neon`.
+
+The console runs in debug mode, so config changes apply without clearing the cache.
+Set `NETTE_DEBUG=0` in production.
+
+
 Checks
 ------
 

@@ -1,0 +1,15 @@
+parameters:
+	level: 8
+
+	paths:
+		- app
+		- tests
+
+	fileExtensions:
+		- php
+		- phpt
+
+	excludePaths:
+		- tests/**/output/*
+
+	tmpDir: temp/phpstan

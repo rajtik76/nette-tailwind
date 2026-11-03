@@ -33,7 +33,7 @@
 		}
 	},
 	"scripts": {
-		"phpstan": "phpstan analyse",
+		"type:check": "phpstan analyse",
 		"lint:check": [
 			"php latte-lint",
 			"neon-lint config"

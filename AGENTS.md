@@ -51,11 +51,11 @@ rather than relying on this file. This file is a signpost, not the manual.
 
 ## Project at a glance
 
-- **Backend:** PHP 8.2+, Nette 3.2, Latte 3 templates
+- **Backend:** PHP 8.4+, Nette 3.2, Latte 3 templates
 - **Database:** Nette Database Explorer (default: SQLite in-memory; change it in `config/common.neon`)
 - **Frontend:** Vite + TypeScript, `nette-forms` for client-side validation (Vite is optional, see `readme.md`)
 - **Testing:** Nette Tester (`.phpt`)
-- **Static analysis:** PHPStan level 8 (`app`, `bin`)
+- **Static analysis:** PHPStan level 8 (`app`, `tests`), config in `phpstan.neon`
 
 ```
 app/
@@ -68,7 +68,9 @@ app/
 config/
 ├── common.neon                # framework configuration
 └── services.neon              # DI services + auto-discovery
+tests/                         # Nette Tester smoke tests (.phpt)
 www/index.php                  # HTTP entry point
+latte-lint                     # Latte linter using the app's own Latte engine
 ```
 
 ## Essential commands
@@ -77,12 +79,18 @@ www/index.php                  # HTTP entry point
 # Run the app (built-in server)
 php -S localhost:8000 -t www
 
-# Tests
+# Tests (render the layout, so run `npm run build` first)
 composer run tester
 vendor/bin/tester tests/path/to/file.phpt -s
 
 # Static analysis
-composer run phpstan
+composer run type:check
+
+# Lint Latte templates and NEON config
+composer run lint:check
+
+# Everything CI runs: lint, static analysis, tests
+composer run ci:check
 
 # Frontend (only if Vite is enabled)
 npm install && npm run dev      # dev server with hot reload

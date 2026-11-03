@@ -6,18 +6,18 @@ A starter for PHP web applications built on [Nette](https://nette.org) with
 [nette/web-project](https://github.com/nette/web-project) skeleton with Tailwind
 wired into its Vite build.
 
-- PHP 8.2+, Nette 3.2, Latte 3
+- PHP 8.4+, Nette 3.2, Latte 3
 - Tailwind CSS 4 via `@tailwindcss/vite`
-- Vite 6 with `@nette/vite-plugin`, assets served by `nette/assets`
+- Vite 8 with `@nette/vite-plugin`, assets served by `nette/assets`
 - `nette-forms` for client-side form validation
 
 
 Requirements
 ------------
 
-- PHP 8.2 or newer
+- PHP 8.4 or newer
 - Composer
-- Node.js 20+ and npm
+- Node.js 22.12+ and npm (`.nvmrc` pins the version used in CI)
 
 
 Installation

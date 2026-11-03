@@ -53,7 +53,7 @@ rather than relying on this file. This file is a signpost, not the manual.
 
 - **Backend:** PHP 8.4+, Nette 3.2, Latte 3 templates
 - **Database:** Nette Database Explorer (default: SQLite in-memory; change it in `config/common.neon`)
-- **Frontend:** Vite + TypeScript, `nette-forms` for client-side validation (Vite is optional, see `readme.md`)
+- **Frontend:** Vite + TypeScript, `nette-forms` for client-side validation (Vite is optional, see `README.md`)
 - **Testing:** Nette Tester (`.phpt`)
 - **Static analysis:** PHPStan level 8 (`app`, `tests`), config in `phpstan.neon`
 

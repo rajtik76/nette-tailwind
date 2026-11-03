@@ -1,64 +1,77 @@
-Nette Web Project
-=================
+Nette + Tailwind CSS
+====================
 
-Welcome to the Nette Web Project! This is a basic skeleton application built using
-[Nette](https://nette.org), ideal for kick-starting your new web projects.
+A starter for PHP web applications built on [Nette](https://nette.org) with
+[Tailwind CSS 4](https://tailwindcss.com). It is the official
+[nette/web-project](https://github.com/nette/web-project) skeleton with Tailwind
+wired into its Vite build.
 
-Nette is a renowned PHP web development framework, celebrated for its user-friendliness,
-robust security, and outstanding performance. It's among the safest choices
-for PHP frameworks out there.
-
-If Nette helps you, consider supporting it by [making a donation](https://nette.org/donate).
-Thank you for your generosity!
+- PHP 8.2+, Nette 3.2, Latte 3
+- Tailwind CSS 4 via `@tailwindcss/vite`
+- Vite 6 with `@nette/vite-plugin`, assets served by `nette/assets`
+- `nette-forms` for client-side form validation
 
 
 Requirements
 ------------
 
-This Web Project is compatible with Nette 3.2 and requires PHP 8.2.
+- PHP 8.2 or newer
+- Composer
+- Node.js 20+ and npm
 
 
 Installation
 ------------
 
-To install the Web Project, Composer is the recommended tool. If you're new to Composer,
-follow [these instructions](https://doc.nette.org/composer). Then, run:
+	git clone https://github.com/rajtik76/nette-tailwind.git
+	cd nette-tailwind
+	composer install
+	npm install
+	npm run build
 
-	composer create-project nette/web-project path/to/install
-	cd path/to/install
+Make sure the `temp/` and `log/` directories are writable.
 
-Ensure the `temp/` and `log/` directories are writable.
-
-
-Asset Building with Vite
-------------------------
-
-This project supports Vite for asset building, which is recommended but optional. To activate Vite:
-
-1. Uncomment the `type: vite` line in the `common.neon` configuration file under the assets mapping section.
-2. Then set up and build the assets:
-
-		npm install
-		npm run build
+`npm run build` is required. Vite is enabled in `config/common.neon`, so the page
+fails with "Failed to read Vite manifest" until the assets are built.
 
 
-Web Server Setup
-----------------
+Development
+-----------
 
-To quickly dive in, use PHP's built-in server:
+Run the Vite dev server and a PHP server side by side:
 
+	npm run dev
 	php -S localhost:8000 -t www
 
-Then, open `http://localhost:8000` in your browser to view the welcome page.
+Then open `http://localhost:8000`. In debug mode, `{asset 'main.js'}` loads assets
+from the Vite dev server, so changes to templates and CSS show up immediately.
+Without the dev server running, the last `npm run build` output is used.
 
-For Apache or Nginx users, configure a virtual host pointing to your project's `www/` directory.
+Works with Laravel Herd / Valet out of the box (park the directory, open
+`nette-tailwind.test`). `wwwDir` is set explicitly in `app/Bootstrap.php`, because
+these servers boot `index.php` through their own router script.
 
-**Important Note:** Ensure `app/`, `config/`, `log/`, and `temp/` directories are not web-accessible.
-Refer to [security warning](https://nette.org/security-warning) for more details.
+
+How Tailwind is wired in
+------------------------
+
+- `assets/main.css` imports Tailwind and adds `@source "../app"`. Vite's root is
+  `assets/`, so without it Tailwind would not scan the Latte templates in `app/`.
+- `assets/main.js` is the Vite entry point and imports `main.css`.
+- `vite.config.ts` registers the `tailwindcss()` plugin next to the Nette plugin.
+- `app/Presentation/@layout.latte` renders `{asset? 'main.js'}`, which outputs both
+  the `<script>` and the `<link rel="stylesheet">` for the bundled CSS.
+
+Use Tailwind classes directly in any `.latte` file under `app/`.
 
 
-Minimal Skeleton
-----------------
+Production
+----------
 
-For demonstrating issues or similar tasks, rather than starting a new project, use
-[minimal skeleton](https://github.com/nette/web-project/tree/minimal).
+	npm run build
+
+Point the web server's document root to `www/`. Built assets go to `www/assets/`
+(ignored by git, so build them on deploy).
+
+**Important:** `app/`, `config/`, `log/` and `temp/` must never be web-accessible.
+See the [security warning](https://nette.org/security-warning).

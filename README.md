@@ -79,6 +79,21 @@ How Tailwind is wired in
 Use Tailwind classes directly in any `.latte` file under `app/`.
 
 
+Welcome and error pages
+-----------------------
+
+- Colors and the font are defined in `@theme` in `assets/main.css`. The font
+  (Instrument Sans) is loaded from [Bunny Fonts](https://fonts.bunny.net) by the
+  welcome page only, through the `head` block of `@layout.latte`. Error pages make
+  no external requests and fall back to the system font.
+- The cube illustrations are inline SVG blocks in `app/Presentation/@cubes.latte`.
+- `Error4xx/@layout.latte` wraps every 4xx template in a shared frame, so
+  `403.latte`, `404.latte` etc. stay plain markup.
+- `500.phtml` and `503.phtml` use neither Tailwind nor the layout, because they
+  must render even when the app or the asset build is broken. Their CSS is inline,
+  so when you change colors in `main.css`, update them there by hand.
+
+
 Production
 ----------
 

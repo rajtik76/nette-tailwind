@@ -1,6 +1,6 @@
 {
 	"name": "rajtik76/nette-tailwind",
-	"description": "Nette: Standard Web Project",
+	"description": "Nette: Standard Web Project with TailwindCSS",
 	"keywords": ["nette"],
 	"type": "project",
 	"license": ["MIT", "BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],

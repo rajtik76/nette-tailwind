@@ -47,9 +47,9 @@ Then open `http://localhost:8000`. In debug mode, `{asset 'main.js'}` loads asse
 from the Vite dev server, so changes to templates and CSS show up immediately.
 Without the dev server running, the last `npm run build` output is used.
 
-Works with Laravel Herd / Valet out of the box (park the directory, open
-`nette-tailwind.test`). `wwwDir` is set explicitly in `app/Bootstrap.php`, because
-these servers boot `index.php` through their own router script.
+Laravel Herd / Valet need a custom driver that serves `www/` as the document root.
+`wwwDir` is set explicitly in `app/Bootstrap.php`, because these servers boot
+`index.php` through their own router script.
 
 
 How Tailwind is wired in

@@ -1,5 +1,5 @@
 {
-	"name": "nette/web-project",
+	"name": "rajtik76/nette-tailwind",
 	"description": "Nette: Standard Web Project",
 	"keywords": ["nette"],
 	"type": "project",
@@ -38,7 +38,12 @@
 			"php latte-lint",
 			"neon-lint config"
 		],
-		"tester": "tester tests -s"
+		"tester": "tester tests -s",
+		"ci:check": [
+			"@lint:check",
+			"@type:check",
+			"@tester"
+		]
 	},
 	"minimum-stability": "stable",
 	"config": {

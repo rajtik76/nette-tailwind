@@ -1,6 +1,8 @@
 Nette + Tailwind CSS
 ====================
 
+[![CI](https://github.com/rajtik76/nette-tailwind/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rajtik76/nette-tailwind/actions/workflows/ci.yml)
+
 A starter for PHP web applications built on [Nette](https://nette.org) with
 [Tailwind CSS 4](https://tailwindcss.com). It is the official
 [nette/web-project](https://github.com/nette/web-project) skeleton with Tailwind

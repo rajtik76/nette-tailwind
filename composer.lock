@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b911e4dee71ad3170d645e04972202fc",
+    "content-hash": "5c498f359ea76ef5bb2b3bf1b24cf28b",
     "packages": [
         {
             "name": "contributte/console",
@@ -1590,6 +1590,70 @@
                 "source": "https://github.com/rajtik76/nette-console/tree/v0.2.0"
             },
             "time": "2026-11-03T14:24:52+00:00"
+        },
+        {
+            "name": "rajtik76/nette-migrations",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rajtik76/nette-migrations.git",
+                "reference": "d56831cd9614d6a0c3dbd3ad1c5a4daf6dc0dfeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rajtik76/nette-migrations/zipball/d56831cd9614d6a0c3dbd3ad1c5a4daf6dc0dfeb",
+                "reference": "d56831cd9614d6a0c3dbd3ad1c5a4daf6dc0dfeb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "nette/database": "^3.2",
+                "nette/di": "^3.2",
+                "nette/utils": "^4.0",
+                "php": ">=8.4",
+                "rajtik76/nette-console": "^0.2"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.24",
+                "nette/phpstan-rules": "^1.0",
+                "nette/tester": "^2.5",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1"
+            },
+            "suggest": {
+                "fakerphp/faker": "Fake data in factories (require-dev)"
+            },
+            "type": "library",
+            "extra": {
+                "nette": {
+                    "extensions": {
+                        "migrations": "Rajtik\\Migrations\\DI\\MigrationsExtension(%consoleMode%)"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rajtik\\Migrations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel-like migrations, schema builder, seeders and factories for Nette Database (SQLite, MySQL, PostgreSQL)",
+            "keywords": [
+                "database",
+                "factory",
+                "migrations",
+                "nette",
+                "schema",
+                "seeder"
+            ],
+            "support": {
+                "issues": "https://github.com/rajtik76/nette-migrations/issues",
+                "source": "https://github.com/rajtik76/nette-migrations/tree/v0.2.0"
+            },
+            "time": "2026-11-03T14:52:02+00:00"
         },
         {
             "name": "symfony/console",

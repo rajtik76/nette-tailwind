@@ -73,6 +73,22 @@ The console runs in debug mode, so config changes apply without clearing the cac
 Set `NETTE_DEBUG=0` in production.
 
 
+Migrations
+----------
+
+Database migrations, seeders and factories come from
+[rajtik76/nette-migrations](https://github.com/rajtik76/nette-migrations):
+
+	php nette make:migration create_posts_table   # database/migrations/
+	php nette migrate                             # run pending migrations
+	php nette migrate:rollback                    # undo the last batch
+	php nette migrate:status
+
+The default `sqlite::memory:` database is gone after every command, so set a real
+`dsn` in `config/common.neon` first. Seeders and factories need extra autoload
+mapping and `fakerphp/faker`, see the package README.
+
+
 Checks
 ------
 

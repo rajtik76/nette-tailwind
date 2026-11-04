@@ -84,6 +84,10 @@ php -S localhost:8000 -t www
 php nette list
 php nette make:command SendReport
 
+# Migrations (rajtik76/nette-migrations; needs a persistent dsn, not sqlite::memory:)
+php nette make:migration create_posts_table
+php nette migrate
+
 # Tests (render the layout, so run `npm run build` first)
 composer run tester
 vendor/bin/tester tests/path/to/file.phpt -s

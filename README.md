@@ -49,7 +49,7 @@ Then open `http://localhost:8000`. In debug mode, `{asset 'main.js'}` loads asse
 from the Vite dev server, so changes to templates and CSS show up immediately.
 Without the dev server running, the last `npm run build` output is used.
 
-Laravel Herd / Valet need a custom driver that serves `www/` as the document root.
+Herd / Valet need a custom driver that serves `www/` as the document root.
 `wwwDir` is set explicitly in `app/Bootstrap.php`, because these servers boot
 `index.php` through their own router script.
 
@@ -57,7 +57,7 @@ Laravel Herd / Valet need a custom driver that serves `www/` as the document roo
 Console
 -------
 
-`php nette` is the Nette counterpart of `php artisan`, provided by
+`php nette` is the application console, provided by
 [rajtik76/nette-console](https://github.com/rajtik76/nette-console):
 
 	php nette list                       # all commands
